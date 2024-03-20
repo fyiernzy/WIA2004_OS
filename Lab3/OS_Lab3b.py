@@ -35,7 +35,7 @@ class Disk:
     def show(self):
         print("{:>10} {:>12} {:>11}".format(
             "File Name", "Start Block", "Blocks Used"))
-        
+
         for file_name, details in self.file_registry.items():
             print("{:>10} {:>12} {:>11}".format(
                 file_name, details['start_block'], details['blocks_used']))

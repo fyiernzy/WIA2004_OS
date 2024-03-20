@@ -51,6 +51,14 @@ class Disk:
             self.block_status[start_block + i] = status
         self.free_blocks += blocks_used if status == Disk.FREE else -blocks_used
 
+    def show(self):
+        print("{:>10} {:>12} {:>11}".format(
+            "File Name", "Start Block", "Blocks Used"))
+
+        for file_name, details in self.file_registry.items():
+            print("{:>10} {:>12} {:>11}".format(
+                file_name, details['start_block'], details['blocks_used']))
+
 
 class FileManager:
     """Manages file allocations on the disk."""
@@ -89,15 +97,7 @@ def main():
             fm.allocate(File(int(size[0]), name))
         elif action == 'del':
             fm.delete(name)
-
-    # Print the table header
-    print("{:<10} {:<12} {:<11}".format("File Name", "Start Block", "Blocks Used"))
-    print("-" * 33)  # Print a separator line for clarity
-
-    # Iterate over the dictionary and print each item in a row
-    for file_name, details in Disk.get_instance().file_registry.items():
-        print("{:<10} {:<12} {:<11}".format(file_name, details['start_block'], details['blocks_used']))
-
+    Disk.get_instance().show()
 
 
 if __name__ == '__main__':
