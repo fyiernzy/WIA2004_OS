@@ -2,6 +2,7 @@ import threading
 import random
 import time
 
+
 class Philosopher:
     def __init__(self, id):
         self.id = id
@@ -14,7 +15,8 @@ class Philosopher:
 
     def eat(self):
         self.pick_up_forks()
-        print(f"Philosopher {self.id} has started eating with forks {self.left_fork} and {self.right_fork}.")
+        print(
+            f"Philosopher {self.id} has started eating with forks {self.left_fork} and {self.right_fork}.")
         print(f"State: {self.get_state()}")
         print("----------------------------------------------------------------------------------------")
         print()
@@ -24,7 +26,8 @@ class Philosopher:
         time.sleep(random.randint(1, 3))
 
         self.put_down_forks()
-        print(f"Philosopher {self.id} has finished eating and released forks {self.left_fork} and {self.right_fork}.")
+        print(
+            f"Philosopher {self.id} has finished eating and released forks {self.left_fork} and {self.right_fork}.")
         print(f"State: {self.get_state()}")
         print("----------------------------------------------------------------------------------------")
         print()
@@ -41,12 +44,14 @@ class Philosopher:
     def get_state(self):
         return f"Forks: {[fork.locked() for fork in forks]}"
 
+
 def print_initial_state():
     print("Initial State:")
     print(f"Forks: {[fork.locked() for fork in forks]}")
     print("----------------------------------------------------------------------------------------")
     print()
     print()
+
 
 def print_final_state():
     print("Final State:")
@@ -55,6 +60,7 @@ def print_final_state():
     print()
 
 # Main program
+
 
 num_philosophers = int(input("Enter the number of philosophers: "))
 forks = [threading.Lock() for _ in range(num_philosophers)]

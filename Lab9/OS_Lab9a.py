@@ -1,4 +1,4 @@
-from table_formatter import TableFormatter
+from utilities.table_formatter import TableFormatter
 
 FREE = False
 IN_USE = True
