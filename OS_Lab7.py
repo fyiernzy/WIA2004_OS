@@ -1,5 +1,5 @@
 import numpy as np
-from table_formatter import TableFormatter
+from utilities.table_formatter import TableFormatter
 
 
 class Sequence:
