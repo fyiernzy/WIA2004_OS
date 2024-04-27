@@ -1,5 +1,5 @@
 import numpy as np
-from table_formatter import TableFormatter
+from WIA2004_OS.Utils.table_formatter import TableFormatter
 
 
 class Sequence:

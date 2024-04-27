@@ -28,7 +28,7 @@ class MainMemory:
             self.loaded_pages[next_pfn] = page
             return next_pfn
         return None
-    
+
     def is_page_loaded(self, vpn) -> bool:
         for loaded_page in self.loaded_pages.values():
             if loaded_page is not None and loaded_page.vpn == vpn:
