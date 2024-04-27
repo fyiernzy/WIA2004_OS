@@ -1,4 +1,4 @@
-from utilities.table_formatter import TableFormatter
+from table_formatter import TableFormatter
 from abc import ABC, abstractmethod
 
 
